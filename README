@@ -1,0 +1,12 @@
+# mini-rag
+
+this is the minimal of the rag model for question answering.
+
+## Requirements
+- Python 3.10.19 
+### Create New Environment
+1) python -m venv mini_rag
+2) activate the env using: 
+source mini_rag/bin/activate
+
+

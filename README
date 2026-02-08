@@ -9,4 +9,12 @@ this is the minimal of the rag model for question answering.
 2) activate the env using: 
 source mini_rag/bin/activate
 
+## Installation 
+
+### Install the required packages
+pip install -r requirements.txt
+
+### setup the environment variable
+cp .env.example .env
+
 

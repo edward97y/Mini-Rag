@@ -12,7 +12,7 @@ data_router=APIRouter(prefix="/api/v1/data",tags=["data"])
 async def upload_data(project_id:str,file:UploadFile,
                       settings:Settings=Depends(get_settings)):
     
-    #validate the uploaded file
+    # validate the uploaded file
     is_valid, response_status = DataController().validate_uploaded_file(file)
     if not is_valid:
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST,content={"message":response_status})

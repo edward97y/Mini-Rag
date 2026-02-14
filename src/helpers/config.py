@@ -13,7 +13,17 @@ class Settings(BaseSettings):
     MONGO_DB_URL:str
     MONGO_DB_NAME:str
 
+    NVIDIA_API_KEY:str
+    NVIDIA_BASE_URL:str
+    NVIDIA_MODEL:str
+    PROVIDER_BACK_END:str
 
+    EMBED_URL:str
+
+
+    DEFAULT_OUTPUT_MAX_CHARACTERS:int
+    DEFAULT_TEMPERATUR:float
+    DEFAULT_INPUT_MAX_CHARACTERS:int
     
 
     class Config:

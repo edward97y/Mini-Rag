@@ -16,15 +16,21 @@ class Settings(BaseSettings):
     NVIDIA_API_KEY:str
     NVIDIA_BASE_URL:str
     NVIDIA_MODEL:str
-    PROVIDER_BACK_END:str
+    GENERATION_MODEL_BACK_END:str
 
+    EMBED_MODEL:str
+    EMBED_SIZE:int
     EMBED_URL:str
 
 
     DEFAULT_OUTPUT_MAX_CHARACTERS:int
-    DEFAULT_TEMPERATUR:float
+    DEFAULT_TEMPERATURE:float
     DEFAULT_INPUT_MAX_CHARACTERS:int
-    
+
+
+    DB_PATH:str
+    DISTANCE_DataBase_Matrix:str
+    DATA_BASE_PROVIDER:str
 
     class Config:
         env_file = ".env"

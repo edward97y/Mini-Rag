@@ -1,1 +1,1 @@
-from QadrantDB import QdrantDB
+from .QadrantDB import QdrantDB

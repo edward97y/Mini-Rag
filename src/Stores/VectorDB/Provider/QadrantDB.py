@@ -8,7 +8,7 @@ import logging
 class QdrantDB(VectorDBinterface):
     def __init__(self,db_path:str,distance_method:str)->None:
 
-        self.db_path=db_path
+        self.db_path=db_path 
         self.distance_method=None
 
         self.client=None
@@ -37,7 +37,7 @@ class QdrantDB(VectorDBinterface):
         return self.client.get_collections()
        
     def list_collections_info(self, collection_name):
-        return self.client.create_collection(collection_name=collection_name)
+        return self.client.get_collection(collection_name=collection_name)
     
     def delete_collection(self, collection_name):
          if self.client.collection_exists(collection_name=collection_name):
@@ -61,6 +61,7 @@ class QdrantDB(VectorDBinterface):
             self.logger.error(f"cannot insert new record into non-existed collection{collection_name}")
             return False
         point=PointStruct(
+            id=record_id,
         vector=vector,
         payload={"text":text,"metadata":metadata}
     )
@@ -87,9 +88,10 @@ class QdrantDB(VectorDBinterface):
             batch_text=text[i:batch_end]
             batch_vector=vector[i:batch_end]
             batch_metadata=metadata[i:batch_end]
+            batch_ids = record_id[i:batch_end]
 
             batch_point=[
-                PointStruct(vector=batch_vector[x],payload={"text":batch_text[x],"metadata":batch_metadata[x]})
+                PointStruct(id=batch_ids[x], vector=batch_vector[x],payload={"text":batch_text[x],"metadata":batch_metadata[x]})
                 
                 for x in range(len(batch_text))
                 ]

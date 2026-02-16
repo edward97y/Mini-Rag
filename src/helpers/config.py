@@ -24,13 +24,13 @@ class Settings(BaseSettings):
 
 
     DEFAULT_OUTPUT_MAX_CHARACTERS:int
-    DEFAULT_TEMPERATUR:float
+    DEFAULT_TEMPERATURE:float
     DEFAULT_INPUT_MAX_CHARACTERS:int
 
 
     DB_PATH:str
     DISTANCE_DataBase_Matrix:str
-    QDRANT:str
+    DATA_BASE_PROVIDER:str
 
     class Config:
         env_file = ".env"

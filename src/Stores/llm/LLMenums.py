@@ -10,4 +10,7 @@ class OpenAIEnum(Enum):
     ASSISTANT="assistant"
 class ProvidersName(Enum):
     NVIDIA="nvidia"
+
+class DocumentTypeEnum(Enum):
+    DOCUMENT="document"
     

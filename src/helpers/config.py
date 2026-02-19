@@ -27,11 +27,24 @@ class Settings(BaseSettings):
     DEFAULT_TEMPERATURE:float
     DEFAULT_INPUT_MAX_CHARACTERS:int
 
+    GEMINI_API_KEY:str
+    GOOGLE_EMBED_MODEL_PROVIDER:str
+    GOOGLE_GENERATE_MODEL_PROVIDER:str
+    GOOGLE_EMBED_SIZE:int
+    GOOGLE_GENERATE_MODEL:str
+    GOOGLE_EMBED_MODEL:str
 
     DB_PATH:str
     DISTANCE_DataBase_Matrix:str
     DATA_BASE_PROVIDER:str
 
+    COHERE_API_KEY:str
+    COHERE_EMBEDDING_MODEL_ID:str
+    COHERE_EMBEDDING_MODEL_SIZE:int
+    COHERE_EMBED_MODEL_PROVIDER:str
+
+
+    DEFAULT_LANGUAGE:str
     class Config:
         env_file = ".env"
 

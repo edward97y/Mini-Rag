@@ -30,6 +30,7 @@ class NvidiaProvider(LLMinterface):
         self.client=OpenAI(base_url=self.base_url,api_key=self.api_key)
         self.embed_client=OpenAI(base_url=self.embed_url,api_key="anything")
         
+        self.enums=OpenAIEnum
         self.logger=logging.getLogger(__name__)
 
     def set_generation_model(self, model_id):

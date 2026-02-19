@@ -3,6 +3,7 @@ from qdrant_client import models,QdrantClient
 from qdrant_client.models import VectorParams,PointStruct
 from typing import List
 from ..VectorDBenums import DistanceMethodenum
+from models.db_schemes import RetrievedDocument
 import logging
 
 class QdrantDB(VectorDBinterface):
@@ -106,5 +107,6 @@ class QdrantDB(VectorDBinterface):
 
     
     def search_by_vector(self, collection_name, vector, limit=5):
-        return self.client.query_points(collection_name=collection_name,query=vector,limit=limit)
+        results= self.client.query_points(collection_name=collection_name,query=vector,limit=limit)
+        return results
     
